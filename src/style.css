@@ -28,7 +28,15 @@ main {
 }
 
 .sheet {
-  max-width: 46rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(7.5rem, 16vw, 11rem);
+  column-gap: clamp(1.5rem, 6vw, 4rem);
+  align-items: start;
+  max-width: 60rem;
+}
+
+.sheet > :not(.globe) {
+  grid-column: 1;
 }
 
 h1,
@@ -59,6 +67,23 @@ h1 {
   align-items: center;
   gap: 0.9rem 1.25rem;
   margin-top: 1.6rem;
+}
+
+.globe {
+  grid-column: 2;
+  grid-row: 1 / 4;
+  align-self: center;
+  justify-self: end;
+  width: 100%;
+  max-width: 11rem;
+  aspect-ratio: 1;
+  pointer-events: none;
+}
+
+.globe__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .button,
@@ -94,6 +119,11 @@ h1 {
 }
 
 @media (max-width: 600px) {
+  .sheet {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
   .copy {
     max-width: none;
   }
@@ -101,5 +131,12 @@ h1 {
   .actions {
     margin-top: 1.25rem;
     gap: 0.75rem 1rem;
+  }
+
+  .globe {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    width: clamp(6.5rem, 30vw, 8rem);
   }
 }
