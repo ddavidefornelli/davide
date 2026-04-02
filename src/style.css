@@ -96,11 +96,6 @@ h1 {
 }
 
 @media (max-width: 600px) {
-  :root {
-    font-family: Helvetica, Arial, sans-serif;
-    font-weight: 700;
-  }
-
   .copy {
     max-width: none;
   }
