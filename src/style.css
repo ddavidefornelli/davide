@@ -1,8 +1,8 @@
 :root {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #2a2c33;
-  background: #f6f2e8;
+  color: #000;
+  background: #fff;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,7 +44,7 @@ h1,
 }
 
 h1 {
-  color: #6673d8;
+  color: blue;
 }
 
 .kicker {
@@ -81,8 +81,8 @@ h1 {
 
 .button:hover,
 .button:focus-visible {
-  background: #2a2c33;
-  color: #f6f2e8;
+  background: #000;
+  color: #fff;
 }
 
 .email {
@@ -91,11 +91,16 @@ h1 {
 
 .email:hover,
 .email:focus-visible {
-  color: #6673d8;
+  color: inherit;
   outline: none;
 }
 
 @media (max-width: 600px) {
+  :root {
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }
+
   .copy {
     max-width: none;
   }
