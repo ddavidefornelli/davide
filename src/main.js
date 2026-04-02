@@ -13,15 +13,10 @@ import {
   Vector3,
   WebGLRenderer,
 } from "three";
-import { inject } from "@vercel/analytics";
-import { injectSpeedInsights } from "@vercel/speed-insights";
 
 const LINE_COLOR = 0x2f47ff;
 const LATITUDES = [-60, -30, 0, 30, 60];
 const MERIDIANS = 18;
-
-inject();
-injectSpeedInsights();
 
 const globeRoot = document.querySelector(".globe");
 

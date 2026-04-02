@@ -137,6 +137,7 @@ h1 {
     grid-column: 1;
     grid-row: auto;
     justify-self: start;
+    margin-top: 4rem;
     width: clamp(6.5rem, 30vw, 8rem);
   }
 }
