@@ -1,6 +1,6 @@
 :root {
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
   color: #000;
   background: #fff;
   font-synthesis: none;
@@ -14,7 +14,7 @@
 
 body {
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
   min-width: 320px;
   color: inherit;
   background-color: inherit;
@@ -26,11 +26,20 @@ a {
 
 main {
   min-height: 100svh;
-  padding: 18px 16px 40px;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  display: grid;
+  place-items: center;
 }
 
 .sheet {
-  max-width: 60rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.8fr);
+  gap: 1.5rem;
+  width: min(100%, 72rem);
+  aspect-ratio: 1.75 / 1;
+  padding: clamp(1rem, 2.2vw, 2rem);
+  border: 4px solid #000;
+  background: #fff;
 }
 
 h1,
@@ -39,69 +48,81 @@ h1,
   margin: 0;
   font-size: clamp(1.4rem, 1rem + 1.4vw, 2.1rem);
   font-weight: inherit;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  line-height: 1;
+  letter-spacing: -0.05em;
 }
 
 h1 {
-  color: blue;
-}
-
-.kicker {
-  margin-top: 0.16rem;
+  grid-column: 1 / -1;
+  font-size: clamp(3.8rem, 12vw, 8.5rem);
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .copy {
-  margin-top: 0.28rem;
+  align-self: end;
+  font-size: clamp(1.5rem, 2.6vw, 2.7rem);
+  line-height: 0.96;
 }
 
 .actions {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.9rem 1.25rem;
-  margin-top: 1.6rem;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: end;
+  gap: 0.75rem;
+  padding-left: 1rem;
 }
 
 .button,
 .email {
-  font-size: 0.95rem;
+  display: block;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 2px solid #000;
+  font-size: 1rem;
+  font-weight: 700;
   line-height: 1;
+  text-decoration: none;
+  background: #fff;
 }
 
 .button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2.5rem;
-  padding: 0.55rem 0.95rem;
-  border: 1px solid currentColor;
-  text-decoration: none;
-}
-
-.button:hover,
-.button:focus-visible {
-  background: #000;
-  color: #fff;
+  text-transform: uppercase;
 }
 
 .email {
-  text-underline-offset: 0.18em;
+  word-break: break-word;
 }
 
+.button:hover,
+.button:focus-visible,
 .email:hover,
 .email:focus-visible {
-  color: inherit;
+  background: #000;
+  color: #fff;
   outline: none;
 }
 
 @media (max-width: 600px) {
+  main {
+    display: block;
+  }
+
+  .sheet {
+    width: auto;
+    aspect-ratio: auto;
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
   .copy {
     max-width: none;
   }
 
   .actions {
-    margin-top: 1.25rem;
-    gap: 0.75rem 1rem;
+    padding-left: 0;
+    border-left: 0;
+    padding-top: 1rem;
   }
 }
