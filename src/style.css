@@ -3,6 +3,7 @@
   font-weight: 400;
   color: #000;
   background: #fff;
+  --page-pad: clamp(1rem, 2vw, 1.5rem);
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,7 +27,7 @@ a {
 
 main {
   min-height: 100svh;
-  padding: clamp(1rem, 2vw, 1.5rem);
+  padding: var(--page-pad);
   display: grid;
   place-items: center;
 }
@@ -35,7 +36,7 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.8fr);
   gap: 1.5rem;
-  width: min(100%, 72rem);
+  width: min(100%, 72rem, calc((100svh - (2 * var(--page-pad))) * 1.75));
   aspect-ratio: 1.75 / 1;
   padding: clamp(1rem, 2.2vw, 2rem);
   border: 4px solid #000;
@@ -54,14 +55,14 @@ h1,
 
 h1 {
   grid-column: 1 / -1;
-  font-size: clamp(3.8rem, 12vw, 8.5rem);
+  font-size: clamp(3.2rem, min(12vw, 20svh), 8.5rem);
   font-weight: 700;
   text-transform: uppercase;
 }
 
 .copy {
   align-self: end;
-  font-size: clamp(1.5rem, 2.6vw, 2.7rem);
+  font-size: clamp(1.35rem, min(2.6vw, 4.75svh), 2.7rem);
   line-height: 0.96;
 }
 
@@ -70,7 +71,7 @@ h1 {
   flex-direction: column;
   align-items: stretch;
   justify-content: end;
-  gap: 0.75rem;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
   padding-left: 1rem;
 }
 
@@ -78,9 +79,9 @@ h1 {
 .email {
   display: block;
   width: 100%;
-  padding: 0.85rem 1rem;
+  padding: clamp(0.75rem, 1.6vw, 0.85rem) 1rem;
   border: 2px solid #000;
-  font-size: 1rem;
+  font-size: clamp(0.95rem, min(1vw, 2.2svh), 1rem);
   font-weight: 700;
   line-height: 1;
   text-decoration: none;
@@ -124,5 +125,16 @@ h1 {
     padding-left: 0;
     border-left: 0;
     padding-top: 1rem;
+  }
+}
+
+@media (max-height: 760px) and (min-width: 601px) {
+  .sheet {
+    gap: 1rem;
+    grid-template-columns: minmax(0, 1.2fr) minmax(14rem, 0.8fr);
+  }
+
+  .copy {
+    line-height: 0.94;
   }
 }
