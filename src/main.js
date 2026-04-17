@@ -14,7 +14,6 @@ const cardsRoot = document.querySelector("#portfolio-cards");
 
 const cards = [
   ...projectCollection.map((project) => ({
-    eyebrow: "Project",
     title: project.title,
     description: project.description,
     href: project.href,

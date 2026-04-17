@@ -1,13 +1,31 @@
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("/ttf/static/CascadiaCode-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("/ttf/static/CascadiaCode-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("/ttf/static/CascadiaCode-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
 :root {
   --page-width: 46rem;
   --line: #8f897f;
-  --muted: #5f5b53;
-  --accent: #1f57ff;
-  --surface: rgba(255, 255, 255, 0.4);
-  --text-size: clamp(1.05rem, 1rem + 0.12vw, 1.11rem);
-  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia,
-    serif;
-  font-weight: 400;
+  font-family: "Cascadia Code", monospace;
   color: #2f2d29;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,17 +35,25 @@
 
 * {
   box-sizing: border-box;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
 }
+
+.card__description {
+    text-transform: none;
+    opacity: 60%;
+}
+
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  font-size: var(--text-size);
   line-height: 1.45;
   color: inherit;
-  background: inherit;
-  border-top: 0.7rem solid #2d2d2d;
+  background: #f1f1f1;
+  color: #1f1f1f;
 }
 
 a {
@@ -58,7 +84,7 @@ summary:focus-visible {
 
 .intro {
   display: grid;
-  gap: 0.08rem;
+  gap: 0.16rem;
   line-height: 1.25;
 }
 
@@ -66,7 +92,6 @@ summary:focus-visible {
 .section__title,
 .card__title {
   margin: 0;
-  font-weight: 400;
   font-size: inherit;
   line-height: inherit;
 }
@@ -75,16 +100,10 @@ summary:focus-visible {
   line-height: inherit;
 }
 
-.intro__name {
-  color: var(--accent);
-}
-
 .intro__links {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem 0.95rem;
-  margin-top: 0.45rem;
-  font-size: inherit;
 }
 
 .section {
@@ -97,14 +116,12 @@ summary:focus-visible {
 }
 
 .section__title {
-  font-size: inherit;
 }
 
 .section__text {
   margin: 0 0 1.7rem;
   max-width: 40rem;
   color: var(--muted);
-  font-size: inherit;
   line-height: inherit;
 }
 
@@ -123,7 +140,6 @@ summary:focus-visible {
   gap: 0.7rem;
   cursor: pointer;
   list-style: none;
-  font-size: inherit;
 }
 
 .download-item summary::-webkit-details-marker {
@@ -132,7 +148,6 @@ summary:focus-visible {
 
 .download-item summary::before {
   content: "▸";
-  font-size: 0.85rem;
   color: var(--muted);
 }
 
@@ -169,14 +184,13 @@ portfolio-card {
 }
 
 .portfolio-heading {
-    margin-top: 0;
+  margin-top: 0;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  justify-content: center;
   height: 100%;
   min-height: 9.5rem;
   padding: 1.55rem 1.15rem;
@@ -196,7 +210,6 @@ portfolio-card {
 .card__eyebrow {
   margin: 0;
   color: var(--muted);
-  font-size: inherit;
 }
 
 .card__eyebrow::before {
@@ -205,7 +218,6 @@ portfolio-card {
 }
 
 .card__title {
-  font-size: inherit;
   line-height: inherit;
 }
 
@@ -223,7 +235,6 @@ portfolio-card {
 .card__description {
   margin: 0;
   color: var(--muted);
-  font-size: 0.98em;
   line-height: inherit;
   font-style: italic;
 }
@@ -235,7 +246,6 @@ portfolio-card {
 
 .card__detail {
   margin: 0;
-  font-size: 0.97em;
   line-height: 1.4;
 }
 
