@@ -1,6 +1,24 @@
 import { projectCollection } from "./data/portfolio-data.js";
 import "./components/portfolio-card.js";
 
+document.documentElement.classList.add("lenis", "lenis-smooth");
+
+let lenis;
+
+async function initLenis() {
+  const Lenis = (await import("@studio-freight/lenis")).default;
+  lenis = new Lenis();
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+}
+
+initLenis();
+
 console.log(`████████▄     ▄████████  ▄█    █▄   ▄█  ████████▄     ▄████████         ▄████████  ▄██████▄     ▄████████ ███▄▄▄▄      ▄████████  ▄█        ▄█        ▄█  `);
 console.log(`███   ▀███   ███    ███ ███    ███ ███  ███   ▀███   ███    ███        ███    ███ ███    ███   ███    ███ ███▀▀▀██▄   ███    ███ ███       ███       ███  `);
 console.log(`███    ███   ███    ███ ███    ███ ███▌ ███    ███   ███    █▀         ███    █▀  ███    ███   ███    ███ ███   ███   ███    █▀  ███       ███       ███▌ `);
