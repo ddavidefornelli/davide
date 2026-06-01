@@ -1,3 +1,4 @@
+import "./style.css";
 import { projectCollection } from "./data/portfolio-data.js";
 import "./components/portfolio-card.js";
 

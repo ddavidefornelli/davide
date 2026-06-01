@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Helvetica";
-  src: url("/Helvetica.ttf") format("truetype");
+  src: url("../public/Helvetica.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Helvetica";
-  src: url("/Helvetica-Bold.ttf") format("truetype");
+  src: url("../public/Helvetica-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: "Helvetica";
-  src: url("/Helvetica-Oblique.ttf") format("truetype");
+  src: url("../public/Helvetica-Oblique.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
   font-family: "Helvetica";
-  src: url("/Helvetica-BoldOblique.ttf") format("truetype");
+  src: url("../public/Helvetica-BoldOblique.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -58,6 +58,7 @@ html.lenis body {
 :root {
   --page-width: 42rem;
   --accent: #e63946;
+  font-size: 16px;
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   color: #1a1a1a;
   font-synthesis: none;
@@ -268,6 +269,12 @@ portfolio-card {
 .card__detail {
   margin: 0;
   line-height: 1.4;
+}
+
+@media (min-width: 1600px) {
+  :root {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 720px) {
