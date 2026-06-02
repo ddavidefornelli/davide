@@ -3,7 +3,9 @@ import { inject } from "@vercel/analytics";
 import { projectCollection } from "./data/portfolio-data.js";
 import "./components/portfolio-card.js";
 
-inject();
+inject({
+  mode: import.meta.env.DEV ? "development" : "production",
+});
 
 document.documentElement.classList.add("lenis", "lenis-smooth");
 
