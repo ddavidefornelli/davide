@@ -1,6 +1,9 @@
 import "./style.css";
+import { inject } from "@vercel/analytics";
 import { projectCollection } from "./data/portfolio-data.js";
 import "./components/portfolio-card.js";
+
+inject();
 
 document.documentElement.classList.add("lenis", "lenis-smooth");
 
