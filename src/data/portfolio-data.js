@@ -11,7 +11,7 @@ export const projectCollection = [
   },
   {
     title: "Mega Tris",
-    description: "my first project made in react, and also the first project where I used git. the code is shit but i'm still proud of it.",
+    description: "my first project made in react, and also the first project where I used git.",
     href: "https://github.com/ddavidefornelli/megatris",
   },
   {

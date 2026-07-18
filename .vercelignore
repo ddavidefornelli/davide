@@ -1,0 +1,9 @@
+dist
+node_modules
+
+public/**
+!public/FornelliCV.pdf
+!public/Helvetica.ttf
+!public/Helvetica-Bold.ttf
+!public/Helvetica-Oblique.ttf
+!public/Helvetica-BoldOblique.ttf
