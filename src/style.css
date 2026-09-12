@@ -294,5 +294,6 @@ portfolio-card {
 
   .card {
     min-height: auto;
+    min-height: auto;
   }
 }
