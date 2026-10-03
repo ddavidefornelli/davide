@@ -12,7 +12,7 @@ export const projectCollection = [
   {
     title: "Mega Tris",
     description: "my first project made in react, and also the first project where I used git.",
-    href: "https://github.com/ddavidefornelli/megatris",
+    href: "https://github.com/ddavidefornelli/megaTris",
   },
   {
     title: "Boid flock",
@@ -23,5 +23,15 @@ export const projectCollection = [
     title: "Dot files",
     description: "All of my nerdy linux and nvim minimal configurations. I use arch btw.",
     href: "https://github.com/ddavidefornelli/dotfiles",
+  },
+  {
+    title: "JEV postman",
+    description: "jev trying to travel the graph, aka the new and worse Dijkstra",
+    href: "https://github.com/ddavidefornelli/TESTY-BESTIE",
+  },
+  {
+    title: "smallProblems",
+    description: "some of the leetcode problems i've done",
+    href: "https://github.com/ddavidefornelli/smallProblems",
   },
 ];

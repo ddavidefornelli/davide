@@ -1,0 +1,8 @@
+Emoji PNG artwork: Twemoji, Copyright Twitter, Inc and other contributors.
+Source: https://github.com/twitter/twemoji/tree/v14.0.2/assets/72x72
+Licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+The artwork is unmodified; rotation and scaling are applied by the site stylesheet.
+
+cat-hello-still.png, cat-working-still.png and dance-still.png are first-frame
+versions of the GIFs already present in this site's public directory, used
+when the visitor requests reduced motion.

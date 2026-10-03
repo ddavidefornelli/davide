@@ -131,4 +131,4 @@ export const siteData = {
     },
   ],
   siteStack: "built with react, tailwindcss, vite and bun.",
-};
+}
