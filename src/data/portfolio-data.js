@@ -1,5 +1,10 @@
 export const projectCollection = [
   {
+    title: "A Better YouTube",
+    description: "a Chrome extension that uses JEV to distinguish low-quality content from valuable YouTube videos.",
+    href: "https://github.com/ddavidefornelli/a-better-youtube",
+  },
+  {
     title: "Sudoku",
     description: "the classic sudoku game played in the terminal made in C.",
     href: "https://github.com/ddavidefornelli/sudoku",
