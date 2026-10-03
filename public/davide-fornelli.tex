@@ -1,0 +1,116 @@
+% Adapted from Jake Gutierrez's Jake Ryan resume template (MIT).
+% https://github.com/jakegut/resume
+\documentclass[letterpaper,11pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-4pt}\scshape\raggedright\large}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+\newcommand{\resumeItem}[1]{\item\small{#1\vspace{-2pt}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+  \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small#4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \small#1 & #2 \\
+  \end{tabular*}\vspace{-7pt}
+}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in,label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\hypersetup{pdftitle={Davide Fornelli - Resume},pdfauthor={Davide Fornelli}}
+\begin{document}
+\begin{center}
+  \textbf{\Huge\scshape Davide Fornelli} \\ \vspace{1pt}
+  \small +39 324 580 7224 $|$
+  \href{mailto:fornelli.dv@gmail.com}{\underline{fornelli.dv@gmail.com}} $|$
+  \href{https://fornelli.dev}{\underline{fornelli.dev}} \\ \vspace{2pt}
+  \small Bari, Italy
+\end{center}
+
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {University of Bari Aldo Moro}{Bari, Italy}
+    {Bachelor's in Computer Science}{Sep 2024 -- Present}
+\resumeSubHeadingListEnd
+
+\section{Work Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Full Stack Developer}{Apr 2026 -- Present}
+    {Deloitte}{Bari, IT}
+  \resumeItemListStart
+    \resumeItem{Supported customer management systems used by several public sector organizations. Performed \textbf{software testing}, identified and reported bugs, investigated system issues, and supported day-to-day maintenance activities.}
+    \resumeItem{Used APIs to validate \textbf{system integrations}, test endpoints, inspect request and response payloads, and troubleshoot data exchange issues between applications.}
+    \resumeItem{Used \textbf{SQL} to query databases, identify data patterns, validate records, investigate anomalies, and support issue analysis and troubleshooting.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{JEV AI Chrome Extension} $|$ \emph{JavaScript}}{Sep 2026}
+  \resumeItemListStart
+    \resumeItem{Built a Chrome Manifest V3 extension that categorizes YouTube videos using titles and durations, using the Jev API.}
+    \resumeItem{Implemented \textbf{asynchronous API calls}, DOM observation, caching and automatic page updates to classify new videos without rescanning the whole feed.}
+    \resumeItem{Created to reduce distractions and make YouTube a more focused learning tool.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{Bird Flocking Visualizer} $|$ \emph{TypeScript, Web Components, CSS, HTML}}{Nov 2026}
+  \resumeItemListStart
+    \resumeItem{Developed a \textbf{Boids algorithm} simulator to visualize collective and social behaviors of flocks.}
+    \resumeItem{Used Custom Web Components to build a modular and reusable architecture without external frameworks.}
+    \resumeItem{Designed a user interface allowing users to adjust simulation parameters such as speed and visual range.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Leadership Experience}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\textbf{AI2B Hackathon}}{Feb 2026}
+  \resumeItemListStart
+    \resumeItem{Led a team in developing an innovative AI-powered full-stack solution for urban mobility.}
+    \resumeItem{Managed the entire project lifecycle, from technical ideation to the final pitch, placing \textbf{5th out of 30 teams}.}
+  \resumeItemListEnd
+  \resumeProjectHeading
+    {\textbf{Programming Project}}{Jun 2025 -- Jul 2025}
+  \resumeItemListStart
+    \resumeItem{Coordinated a team of peers to develop a complex software application in C, defining the \textbf{system architecture} and overseeing unit testing and debugging.}
+    \resumeItem{Optimized team workflows through regular meetings and code reviews, earning the highest grade of \textbf{30/30}.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Technical Skills \& Languages}
+\resumeSubHeadingListStart
+  \small{\item{
+    \textbf{Programming}{: TypeScript, JavaScript, C, C++, SQL, HTML, CSS} \\
+    \textbf{Technologies \& Concepts}{: Web Components, Chrome Manifest V3, APIs, OOP} \\
+    \textbf{Languages}{: English (Native), Italian}
+  }}
+\resumeSubHeadingListEnd
+\end{document}

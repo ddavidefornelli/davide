@@ -5,7 +5,7 @@ export const siteData = {
     location: "bari, italy",
     email: "fornelli.dv@gmail.com",
     github: "https://github.com/ddavidefornelli",
-    cv: "./FornelliCV.pdf",
+    cv: "/davide-fornelli.pdf",
     role: "full-stack developer at deloitte",
     study: "computer science student at uniba",
   },
@@ -125,7 +125,7 @@ export const siteData = {
     },
     {
       label: "cv",
-      href: "./FornelliCV.pdf",
+      href: "/davide-fornelli.pdf",
       description: "open resume pdf",
       external: true,
     },
