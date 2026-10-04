@@ -110,9 +110,27 @@ summary:focus-visible {
 
 .intro {
   display: grid;
-  gap: 0.25rem;
+  grid-template-columns: minmax(0, 1fr) 11rem;
+  align-items: start;
+  gap: 2rem;
   line-height: 1.2;
   padding-bottom: 1.5rem;
+}
+
+.intro__content {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+.intro__portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 18%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .intro__line,
@@ -274,6 +292,23 @@ portfolio-card {
 @media (min-width: 1600px) {
   :root {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 900px) {
+  .intro {
+    grid-template-columns: minmax(0, 1fr) 9rem;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .intro__portrait {
+    display: none;
   }
 }
 
