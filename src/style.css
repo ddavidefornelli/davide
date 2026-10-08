@@ -88,6 +88,22 @@ summary {
   color: #000;
 }
 
+a,
+button,
+summary,
+.card--link .card__title {
+  transition: color 200ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a,
+  button,
+  summary,
+  .card--link .card__title {
+    transition: none;
+  }
+}
+
 a:hover,
 a:focus-visible {
   color: var(--accent);
