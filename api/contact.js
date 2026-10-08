@@ -1,4 +1,4 @@
-import { assistantProfile } from "../src/data/profile-data.js";
+import { siteData } from "../src/data/site-data.js";
 import { sendContactMessage } from "../src/lib/contact-service.js";
 
 function parseRequestBody(body) {
@@ -25,7 +25,7 @@ export default async function handler(req, res) {
       email: body.email,
       message: body.message,
       resendApiKey: process.env.RESEND_API_KEY,
-      contactToEmail: process.env.CONTACT_TO_EMAIL || assistantProfile.identity.email,
+      contactToEmail: process.env.CONTACT_TO_EMAIL || siteData.identity.email,
       contactFromEmail: process.env.CONTACT_FROM_EMAIL || "onboarding@resend.dev",
     });
 

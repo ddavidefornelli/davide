@@ -56,7 +56,7 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
   background: var(--blue);
 }
 
-.intro__header { padding: 68px 32px 0; }
+.intro__header { padding: 28px 32px 0; }
 
 .intro__name {
   margin: 0;
@@ -152,7 +152,7 @@ portfolio-card { display: block; }
 
 @media (max-width: 600px) {
   .page { padding: 20px 16px 40px; }
-  .intro__header { padding: 64px 20px 0; }
+  .intro__header { padding: 24px 20px 0; }
   .intro__content { padding: 18px 20px 24px; font-size: 12px; }
   .intro__portrait { aspect-ratio: 4 / 3; }
   .intro__photo figcaption { font-size: 9px; }

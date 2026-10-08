@@ -5,6 +5,10 @@ public/**
 !public/davide-fornelli.pdf
 !public/davide-fornelli.webp
 !public/victoria-harbour.webp
+!public/cube/
+!public/cube/**
+!public/woff2/
+!public/woff2/CascadiaMono.woff2
 !public/Helvetica.ttf
 !public/Helvetica-Bold.ttf
 !public/Helvetica-Oblique.ttf

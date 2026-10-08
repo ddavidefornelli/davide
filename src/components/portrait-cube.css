@@ -1,0 +1,94 @@
+.cube-section {
+  margin-top: 48px;
+  border-top: 1px solid #1114a526;
+}
+
+portrait-cube {
+  display: block;
+  --cube-size: clamp(128px, 30vw, 160px);
+  --cube-depth: calc(var(--cube-size) / 2);
+}
+
+.cube-stage {
+  position: relative;
+  height: 380px;
+  perspective: 900px;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cube-stage:focus {
+  outline: none;
+}
+
+.cube-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  margin-top: calc(var(--cube-depth) * -1);
+  margin-left: calc(var(--cube-depth) * -1);
+  transform: translate3d(var(--move-x, 0px), var(--move-y, 0px), 0);
+  transform-style: preserve-3d;
+}
+
+.portrait-cube {
+  width: 100%;
+  height: 100%;
+  transform: rotateX(-18deg) rotateY(-28deg);
+  transform-style: preserve-3d;
+  cursor: grab;
+  touch-action: none;
+}
+
+.is-dragging, .is-dragging .portrait-cube { cursor: grabbing; }
+
+.cube-face {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.cube-face--front { transform: translateZ(var(--cube-depth)); }
+.cube-face--back { transform: rotateY(180deg) translateZ(var(--cube-depth)); }
+.cube-face--left { transform: rotateY(-90deg) translateZ(var(--cube-depth)); }
+.cube-face--right { transform: rotateY(90deg) translateZ(var(--cube-depth)); }
+.cube-face--top { transform: rotateX(90deg) translateZ(var(--cube-depth)); }
+.cube-face--bottom { transform: rotateX(-90deg) translateZ(var(--cube-depth)); }
+
+.cube-shadow {
+  position: absolute;
+  top: calc(50% + var(--cube-depth) + 24px);
+  left: 50%;
+  width: var(--cube-size);
+  height: 14px;
+  margin-left: calc(var(--cube-depth) * -1);
+  border-radius: 50%;
+  background: #1114a51f;
+  filter: blur(10px);
+  transform: translate(var(--move-x, 0px), var(--move-y, 0px));
+  pointer-events: none;
+}
+
+.cube-keyboard-hint {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .cube-section { margin-top: 36px; }
+  .cube-stage { height: 340px; }
+}
