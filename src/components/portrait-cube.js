@@ -2,6 +2,7 @@ import "./portrait-cube.css";
 
 const IDLE_DELAY = 1500;
 const SPIN_DEGREES_PER_SECOND = 15;
+const INITIAL_TILT_DEGREES = -12;
 
 let nextCubeId = 0;
 
@@ -13,7 +14,7 @@ class PortraitCube extends HTMLElement {
     const faces = ["front", "back", "left", "right", "top", "bottom"];
 
     this.innerHTML = `
-      <div class="cube-stage" tabindex="0" role="group"
+      <div class="cube-stage" tabindex="0" role="group" data-lenis-prevent-touch
         aria-label="Interactive portrait cube" aria-describedby="${hintId}">
         <div class="cube-shadow" aria-hidden="true"></div>
         <div class="cube-position">
@@ -36,7 +37,7 @@ class PortraitCube extends HTMLElement {
     const cube = this.querySelector(".portrait-cube");
     const position = { x: 0, y: 0 };
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let rotation = new DOMMatrix();
+    let rotation = new DOMMatrix().rotate(INITIAL_TILT_DEGREES, 0, 0);
     let drag = null;
     let pointerOver = false;
     let autoSpinPaused = false;
@@ -87,7 +88,7 @@ class PortraitCube extends HTMLElement {
 
     const reset = () => {
       endDrag();
-      rotation = new DOMMatrix();
+      rotation = new DOMMatrix().rotate(INITIAL_TILT_DEGREES, 0, 0);
       position.x = position.y = 0;
       markInteraction();
       render();
