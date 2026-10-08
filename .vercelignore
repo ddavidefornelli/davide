@@ -4,6 +4,7 @@ node_modules
 public/**
 !public/davide-fornelli.pdf
 !public/davide-fornelli.webp
+!public/victoria-harbour.webp
 !public/Helvetica.ttf
 !public/Helvetica-Bold.ttf
 !public/Helvetica-Oblique.ttf
