@@ -1,12 +1,17 @@
 import "./style.css";
-import { inject } from "@vercel/analytics";
+import { initAnalytics } from "./lib/engagement.js";
 import { projectCollection } from "./data/portfolio-data.js";
 import "./components/portfolio-card.js";
 import "./components/portrait-cube.js";
 
-inject({
-  mode: import.meta.env.DEV ? "development" : "production",
-});
+const introDescriptionLead = document.querySelector(".intro__description-lead");
+
+if (introDescriptionLead) {
+  const age = new Date().getFullYear() - 2005;
+  introDescriptionLead.textContent = `Hi, I'm ${age} and love building things.`;
+}
+
+initAnalytics();
 
 document.documentElement.classList.add("lenis", "lenis-smooth");
 

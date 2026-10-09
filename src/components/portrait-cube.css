@@ -1,6 +1,6 @@
 portrait-cube {
   display: block;
-  --cube-size: clamp(128px, 30vw, 160px);
+  --cube-size: clamp(112px, 26.25vw, 140px);
   --cube-depth: calc(var(--cube-size) / 2);
 }
 

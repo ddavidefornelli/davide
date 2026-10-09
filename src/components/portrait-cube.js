@@ -1,4 +1,5 @@
 import "./portrait-cube.css";
+import { trackOnce } from "../lib/engagement.js";
 
 const IDLE_DELAY = 1500;
 const SPIN_DEGREES_PER_SECOND = 15;
@@ -39,7 +40,6 @@ class PortraitCube extends HTMLElement {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let rotation = new DOMMatrix().rotate(INITIAL_TILT_DEGREES, 0, 0);
     let drag = null;
-    let pointerOver = false;
     let autoSpinPaused = false;
     let inView = false;
     let previousTime = null;
@@ -80,6 +80,9 @@ class PortraitCube extends HTMLElement {
     const endDrag = () => {
       if (!drag) return;
       const pointerId = drag.id;
+      if (drag.changed) {
+        trackOnce("Cube interacted", { action: drag.move ? "move" : "rotate", input: "pointer" });
+      }
       drag = null;
       markInteraction();
       stage.classList.remove("is-dragging");
@@ -96,15 +99,6 @@ class PortraitCube extends HTMLElement {
 
     this.controller = new AbortController();
     const options = { signal: this.controller.signal };
-
-    stage.addEventListener("pointerenter", (event) => {
-      pointerOver = event.pointerType !== "touch";
-    }, options);
-
-    stage.addEventListener("pointerleave", () => {
-      pointerOver = false;
-      markInteraction();
-    }, options);
 
     stage.addEventListener("focus", markInteraction, options);
     reducedMotion.addEventListener("change", markInteraction, options);
@@ -125,6 +119,7 @@ class PortraitCube extends HTMLElement {
       markInteraction();
       const dx = event.clientX - drag.x;
       const dy = event.clientY - drag.y;
+      if (dx || dy) drag.changed = true;
       drag.x = event.clientX;
       drag.y = event.clientY;
       if (drag.move) move(dx, dy);
@@ -138,16 +133,23 @@ class PortraitCube extends HTMLElement {
       }, options);
     }
 
-    stage.addEventListener("dblclick", reset, options);
+    stage.addEventListener("dblclick", () => {
+      trackOnce("Cube interacted", { action: "reset", input: "pointer" });
+      reset();
+    }, options);
 
     stage.addEventListener("keydown", (event) => {
       if (event.code === "Space") {
         event.preventDefault();
-        if (!event.repeat) autoSpinPaused = !autoSpinPaused;
+        if (!event.repeat) {
+          autoSpinPaused = !autoSpinPaused;
+          trackOnce("Cube interacted", { action: autoSpinPaused ? "pause" : "resume", input: "keyboard" });
+        }
         markInteraction();
         return;
       }
       if (event.key === "Home") {
+        trackOnce("Cube interacted", { action: "reset", input: "keyboard" });
         event.preventDefault();
         reset();
         return;
@@ -155,6 +157,7 @@ class PortraitCube extends HTMLElement {
       const directions = { ArrowLeft: [-16, 0], ArrowRight: [16, 0], ArrowUp: [0, -16], ArrowDown: [0, 16] };
       const direction = directions[event.key];
       if (!direction) return;
+      trackOnce("Cube interacted", { action: event.shiftKey ? "move" : "rotate", input: "keyboard" });
       event.preventDefault();
       markInteraction();
       if (event.shiftKey) move(...direction);
@@ -179,7 +182,7 @@ class PortraitCube extends HTMLElement {
       previousTime = time;
 
       if (inView && !document.hidden && !reducedMotion.matches &&
-          !drag && !pointerOver && !autoSpinPaused && time - lastInteraction >= IDLE_DELAY) {
+          !drag && !autoSpinPaused && time - lastInteraction >= IDLE_DELAY) {
         rotation = new DOMMatrix()
           .rotate(0, SPIN_DEGREES_PER_SECOND * elapsed / 1000, 0)
           .multiply(rotation);

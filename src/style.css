@@ -63,8 +63,8 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
   align-items: center;
   gap: var(--layout-gap);
 }
-.intro__text { display: grid; gap: var(--space-3); min-width: 0; }
-.intro__header { padding: 0; }
+.intro__text { display: grid; gap: var(--space-2); min-width: 0; }
+.intro__header { display: grid; gap: var(--space-1); }
 .intro__name {
   margin: 0;
   color: var(--text-primary);
@@ -75,10 +75,10 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 }
 .intro__content {
   display: grid;
-  gap: var(--space-3);
+  gap: 12px;
   min-width: 0;
 }
-.intro__roles { display: grid; gap: var(--space-1); }
+.intro__roles { display: grid; }
 .intro__line { margin: 0; }
 .intro__role { color: var(--text-primary); }
 .intro__affiliation { color: var(--text-muted); }
@@ -87,14 +87,21 @@ a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
   align-items: center;
   gap: var(--space-2);
   color: var(--text-muted);
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 16px;
+  line-height: 24px;
 }
-.intro__location-icon { width: 16px; height: 16px; flex-shrink: 0; }
+.intro__location-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  transform: translateY(-1px);
+}
+.intro__description > span { display: block; }
 .intro__links {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2) var(--space-4);
+  gap: var(--space-2) var(--space-3);
   font-weight: 700;
 }
 .intro__cube { width: 100%; }
