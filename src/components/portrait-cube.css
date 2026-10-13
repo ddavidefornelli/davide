@@ -73,7 +73,7 @@ portrait-cube {
   height: 14px;
   margin-left: calc(var(--cube-depth) * -1);
   border-radius: 50%;
-  background: #0000001f;
+  background: var(--cube-shadow-color, #0000001f);
   filter: blur(10px);
   transform: translate(var(--move-x, 0px), var(--move-y, 0px));
   pointer-events: none;
