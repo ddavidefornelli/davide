@@ -7,6 +7,8 @@ public/**
 !public/victoria-harbour.webp
 !public/cube/
 !public/cube/**
+!public/textures/
+!public/textures/**
 !public/woff2/
 !public/woff2/CascadiaMono.woff2
 !public/Helvetica.ttf
