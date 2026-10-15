@@ -28,3 +28,4 @@ Implementation: `src/lib/engagement.js`, with cube events in `src/components/por
 Development uses Vercel's debug mode rather than production reporting. Ad blockers and visitor opt-outs can prevent collection. This dashboard shows aggregate engagement, not which individual recruiter visited.
 
 Vercel documentation: [setup](https://vercel.com/docs/analytics/quickstart), [custom events](https://vercel.com/docs/analytics/custom-events), [plan requirements](https://vercel.com/docs/analytics/limits-and-pricing).
+
