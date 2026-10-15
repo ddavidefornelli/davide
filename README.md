@@ -8,20 +8,6 @@ npm run dev
 npm run build
 ```
 
-## Background
-
-The dark, granular earth background is derived from the supplied reference in `scripts/assets/earth-reference.png`. A seamless WebP tile preserves its irregular detail; a dark content veil and soft vignette keep the texture restrained. Warm ivory text, brighter hover colours, and a contrasting selection highlight preserve readability. Everything is static CSS, with no animation or additional browser dependencies. Print restores dark text on white, and forced-colour mode hides decorative layers.
-
-Adjust intensity in `src/style.css` using `--background-texture-opacity`, `--background-content-shade`, and `--background-vignette-opacity`. The grain stays the same size on mobile, with a slightly stronger content veil for small screens.
-
-The generated asset is committed in `public/textures/`; normal development and builds do not need Python. To regenerate it:
-
-```sh
-python -m venv /tmp/portfolio-background-tools
-/tmp/portfolio-background-tools/bin/pip install numpy pillow
-/tmp/portfolio-background-tools/bin/python scripts/generate-background.py
-```
-
 ## Analytics
 
 The site uses the existing `@vercel/analytics` integration. In the Vercel project dashboard, open **Analytics**, enable **Web Analytics**, then redeploy. Page views are available on Hobby within its usage limits. **Custom events require Vercel Pro**; this code does not change your plan or enable paid add-ons.

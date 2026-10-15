@@ -13,16 +13,9 @@
 }
 
 :root {
-  --text-primary: #f5eee4;
-  --text-body: #ded3c5;
-  --text-muted: #beb09e;
-  --text-link-hover: #fff8ed;
-  --background-base: #2b241e;
-  --background-texture-opacity: 0.9;
-  --background-content-shade: 0.34;
-  --background-vignette-opacity: 0.42;
-  --cube-shadow-color: #00000070;
-  color-scheme: dark;
+  --text-primary: #171717;
+  --text-body: #454545;
+  --text-muted: #737373;
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 16px;
@@ -36,7 +29,7 @@
   --layout-gap: var(--space-5);
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   color: var(--text-body);
-  background: var(--background-base);
+  background: #fff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -44,44 +37,7 @@
 }
 
 * { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; min-height: 100vh; font-size: 16px; line-height: 24px; letter-spacing: -0.02em; isolation: isolate; }
-
-/* Original granular earth texture, with a dark veil for readable text.
-   Isolation keeps negative-z layers above the canvas but below all content,
-   without creating a transformed ancestor for the interactive 3D cube. */
-body::before,
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-}
-
-body::before {
-  background-image:
-    radial-gradient(
-      ellipse at 50% 36%,
-      rgb(19 16 13 / var(--background-content-shade)) 0%,
-      rgb(19 16 13 / 0.2) 65%,
-      rgb(19 16 13 / 0.12) 100%
-    ),
-    url("/textures/earth-grain.webp");
-  background-position: center, center top;
-  background-size: cover, 422px 265px;
-  background-repeat: no-repeat, repeat;
-  opacity: var(--background-texture-opacity);
-}
-
-body::after {
-  background: radial-gradient(
-    ellipse at 50% 36%,
-    transparent 28%,
-    rgb(9 7 5 / var(--background-vignette-opacity)) 100%
-  );
-}
-
-::selection { color: #211b16; background: #dbc4a5; }
+body { margin: 0; min-width: 320px; min-height: 100vh; font-size: 16px; line-height: 24px; letter-spacing: -0.02em; }
 
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
@@ -90,7 +46,7 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-scrolling iframe { pointer-events: none; }
 
 a { color: var(--text-primary); text-decoration-thickness: 1px; text-underline-offset: 4px; }
-a:hover { color: var(--text-link-hover); }
+a:hover { color: var(--text-muted); }
 a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
 
 .page { padding: var(--page-padding) var(--page-gutter); }
@@ -172,7 +128,7 @@ portfolio-card { display: block; height: 100%; }
 }
 .card__title { margin: 0; color: var(--text-primary); font-size: 18px; font-weight: 700; line-height: 24px; }
 .card--link .card__title { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
-.card--link:hover .card__title { color: var(--text-link-hover); }
+.card--link:hover .card__title { color: var(--text-muted); }
 .card__description { margin: 0; color: var(--text-body); font-size: 14px; line-height: 20px; }
 .card__eyebrow { margin: 0; color: var(--text-muted); font-size: 12px; line-height: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
 .card__details { display: grid; gap: var(--space-1); }
@@ -184,7 +140,6 @@ portfolio-card { display: block; height: 100%; }
     --page-padding: var(--space-5);
     --section-gap: var(--space-5);
     --layout-gap: var(--space-4);
-    --background-content-shade: 0.44;
   }
   .intro { grid-template-columns: 1fr; }
   .intro__cube { max-width: 352px; justify-self: center; }
@@ -198,21 +153,4 @@ portfolio-card { display: block; height: 100%; }
 @media (max-width: 400px) {
   :root { --page-gutter: var(--space-3); }
   .intro__name { font-size: 36px; line-height: 44px; }
-}
-
-@media print {
-  :root {
-    --text-primary: #171717;
-    --text-body: #454545;
-    --text-muted: #606060;
-    --text-link-hover: #171717;
-    --cube-shadow-color: #0000001f;
-    color-scheme: light;
-    background: #fff;
-  }
-  body::before, body::after { display: none; }
-}
-
-@media (forced-colors: active) {
-  body::before, body::after { display: none; }
 }
