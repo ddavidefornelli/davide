@@ -1,5 +1,10 @@
 export const projectCollection = [
   {
+    title: "Prune",
+    description: "a daily planning desktop app to focus on three tasks a day, with focus timers and cloud sync.",
+    href: "https://github.com/ddavidefornelli/PRO",
+  },
+  {
     title: "A Better YouTube",
     description: "a Chrome extension that uses JEV to distinguish low-quality content from valuable YouTube videos.",
     href: "https://github.com/ddavidefornelli/a-better-youtube",
