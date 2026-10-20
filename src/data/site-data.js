@@ -69,6 +69,14 @@ export const siteData = {
   },
   projects: [
     {
+      title: "prune",
+      description: "a daily planning desktop app to focus on three tasks a day, with focus timers and cloud sync.",
+      href: "https://github.com/ddavidefornelli/PRO",
+      kind: "rust / tauri / supabase",
+      meta: "personal project",
+      external: true,
+    },
+    {
       title: "sudoku",
       description: "the classic sudoku game played in the terminal, made in c.",
       href: "https://github.com/ddavidefornelli/sudoku",
