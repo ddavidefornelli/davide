@@ -78,9 +78,9 @@ export const siteData = {
     },
     {
       title: "prune",
-      description: "a daily planning desktop app to focus on three tasks a day, with focus timers and cloud sync.",
-      href: "https://github.com/ddavidefornelli/PRO",
-      kind: "rust / tauri / supabase",
+      description: "a daily planner to focus on three tasks a day, with focus timers and a weekly review.",
+      href: "https://prune.win",
+      kind: "solidjs / typescript / supabase",
       meta: "personal project",
       external: true,
     },

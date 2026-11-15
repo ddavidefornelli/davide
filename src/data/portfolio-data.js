@@ -6,8 +6,8 @@ export const projectCollection = [
   },
   {
     title: "Prune",
-    description: "a daily planning desktop app to focus on three tasks a day, with focus timers and cloud sync.",
-    href: "https://github.com/ddavidefornelli/PRO",
+    description: "a daily planner to focus on three tasks a day, with focus timers and a weekly review.",
+    href: "https://prune.win",
   },
   {
     title: "A Better YouTube",
