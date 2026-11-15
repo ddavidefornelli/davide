@@ -74,18 +74,18 @@
 \section{Projects}
 \resumeSubHeadingListStart
   \resumeProjectHeading
-    {\textbf{JEV AI Chrome Extension} $|$ \emph{JavaScript}}{Sep 2026}
+    {\textbf{\href{https://prune.win}{\underline{prune.win}}} $|$ \emph{TypeScript, SolidJS, Supabase, Rust, Tauri}}{Oct 2026 -- Present}
   \resumeItemListStart
-    \resumeItem{Built a Chrome Manifest V3 extension that categorizes YouTube videos using titles and durations, using the Jev API.}
-    \resumeItem{Implemented \textbf{asynchronous API calls}, DOM observation, caching and automatic page updates to classify new videos without rescanning the whole feed.}
-    \resumeItem{Created to reduce distractions and make YouTube a more focused learning tool.}
+    \resumeItem{Created and launched a daily planner built around picking just three tasks a day, with focus timers and a weekly review, reaching \textbf{53 signed-in users}.}
+    \resumeItem{Built the mobile-first web app in \textbf{SolidJS} and the Mac desktop app in \textbf{Rust and Tauri}, both sharing one Supabase backend with Google and email-code sign-in.}
+    \resumeItem{Implemented a persistent local outbox so tasks and timers update instantly and \textbf{sync across devices} in the background.}
   \resumeItemListEnd
   \resumeProjectHeading
-    {\textbf{Bird Flocking Visualizer} $|$ \emph{TypeScript, Web Components, CSS, HTML}}{Nov 2026}
+    {\textbf{AI Tetris Player} $|$ \emph{TypeScript, React, Jev API}}{Oct 2026}
   \resumeItemListStart
-    \resumeItem{Developed a \textbf{Boids algorithm} simulator to visualize collective and social behaviors of flocks.}
-    \resumeItem{Used Custom Web Components to build a modular and reusable architecture without external frameworks.}
-    \resumeItem{Designed a user interface allowing users to adjust simulation parameters such as speed and visual range.}
+    \resumeItem{Built a Tetris game from scratch (SRS rotations, 7-bag randomizer, hold) that an \textbf{LLM can play on its own}. \href{https://github.com/ddavidefornelli/jev-tetris}{\underline{GitHub}}}
+    \resumeItem{Wrote a \textbf{placement planner} that enumerates every reachable landing, scores boards on holes, height and wells with one-piece lookahead, then lets the model pick from a shortlist.}
+    \resumeItem{Each decision is a complete, validated key sequence executed through the same inputs as a human player, covered by unit and end-to-end tests.}
   \resumeItemListEnd
 \resumeSubHeadingListEnd
 
@@ -98,12 +98,6 @@
     \resumeItem{Implemented deterministic budgeting logic (weekly safe-to-spend, spending baskets, wellness score) and comparisons with Statistics Finland open data. \href{https://github.com/ddavidefornelli/junction-2026}{\underline{GitHub}}}
   \resumeItemListEnd
   \resumeProjectHeading
-    {\textbf{AI2B Hackathon}}{Feb 2026}
-  \resumeItemListStart
-    \resumeItem{Led a team in developing an innovative AI-powered full-stack solution for urban mobility.}
-    \resumeItem{Managed the entire project lifecycle, from technical ideation to the final pitch, placing \textbf{5th out of 30 teams}.}
-  \resumeItemListEnd
-  \resumeProjectHeading
     {\textbf{Programming Project}}{Jun 2025 -- Jul 2025}
   \resumeItemListStart
     \resumeItem{Coordinated a team of peers to develop a complex software application in C, defining the \textbf{system architecture} and overseeing unit testing and debugging.}
@@ -114,8 +108,8 @@
 \section{Technical Skills \& Languages}
 \resumeSubHeadingListStart
   \small{\item{
-    \textbf{Programming}{: TypeScript, JavaScript, C, C++, SQL, HTML, CSS} \\
-    \textbf{Technologies \& Concepts}{: Web Components, Chrome Manifest V3, APIs, OOP} \\
+    \textbf{Programming}{: TypeScript, JavaScript, Rust, C, C++, SQL, HTML, CSS} \\
+    \textbf{Technologies \& Concepts}{: React, SolidJS, Tauri, Supabase, LLM APIs, OOP} \\
     \textbf{Languages}{: English (Native), Italian}
   }}
 \resumeSubHeadingListEnd
