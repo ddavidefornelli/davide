@@ -1,5 +1,10 @@
 export const projectCollection = [
   {
+    title: "Walter (Junction 2026)",
+    description: "built at the Junction 2026 hackathon for the S-Pankki challenge: a personal economic trainer you can chat and talk with about your own spending.",
+    href: "https://github.com/ddavidefornelli/junction-2026",
+  },
+  {
     title: "Prune",
     description: "a daily planning desktop app to focus on three tasks a day, with focus timers and cloud sync.",
     href: "https://github.com/ddavidefornelli/PRO",

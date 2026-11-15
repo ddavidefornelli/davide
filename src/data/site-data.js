@@ -69,6 +69,14 @@ export const siteData = {
   },
   projects: [
     {
+      title: "walter",
+      description: "built at the junction 2026 hackathon for the s-pankki challenge: a personal economic trainer you can chat and talk with about your own spending.",
+      href: "https://github.com/ddavidefornelli/junction-2026",
+      kind: "react / typescript / elevenlabs",
+      meta: "junction 2026 hackathon",
+      external: true,
+    },
+    {
       title: "prune",
       description: "a daily planning desktop app to focus on three tasks a day, with focus timers and cloud sync.",
       href: "https://github.com/ddavidefornelli/PRO",
