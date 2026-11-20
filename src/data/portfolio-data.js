@@ -1,13 +1,14 @@
 export const projectCollection = [
   {
-    title: "Walter (Junction 2026)",
-    description: "built at the Junction 2026 hackathon for the S-Pankki challenge: a personal economic trainer you can chat and talk with about your own spending.",
-    href: "https://github.com/ddavidefornelli/junction-2026",
-  },
-  {
     title: "Prune",
     description: "a daily planner to focus on three tasks a day, with focus timers and a weekly review.",
     href: "https://prune.win",
+    extraLink: { label: "read the build log ->", href: "./prune/" },
+  },
+  {
+    title: "Walter (Junction 2026)",
+    description: "built at the Junction 2026 hackathon for the S-Pankki challenge: a personal economic trainer you can chat and talk with about your own spending.",
+    href: "https://github.com/ddavidefornelli/junction-2026",
   },
   {
     title: "A Better YouTube",

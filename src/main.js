@@ -49,6 +49,7 @@ const cards = [
     href: project.href,
     target: project.href ? "_blank" : undefined,
     rel: project.href ? "noopener noreferrer" : undefined,
+    extraLink: project.extraLink,
   })),
 ];
 

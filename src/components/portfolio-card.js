@@ -60,6 +60,16 @@ class PortfolioCard extends HTMLElement {
       card.append(detailsElement);
     }
 
+    // A second link sits outside the card's own link, since links can't be nested.
+    if (this._cardData.extraLink) {
+      const extra = document.createElement("a");
+      extra.className = "card-extra";
+      extra.href = this._cardData.extraLink.href;
+      extra.textContent = this._cardData.extraLink.label;
+      this.replaceChildren(card, extra);
+      return;
+    }
+
     this.replaceChildren(card);
   }
 }

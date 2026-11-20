@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="How Davide Fornelli built and shipped prune.win, a three-tasks-a-day planner, in one month."
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%8C%8A%3C/text%3E%3C/svg%3E"
+    />
+    <script type="module" src="/src/prune.js"></script>
+    <title>prune build log · davide fornelli</title>
+  </head>
+  <body>
+    <main class="page">
+      <div class="page__inner">
+        <nav class="log-nav" aria-label="Breadcrumb">
+          <a href="/" data-analytics="Home">&larr; Davide Fornelli</a>
+        </nav>
+
+        <header class="log-header">
+          <h1 class="log-header__title" id="log-title"></h1>
+          <p class="log-header__summary" id="log-summary"></p>
+          <dl class="log-facts" id="log-facts"></dl>
+          <p class="intro__links">
+            <a href="https://prune.win" data-analytics="Prune" target="_blank" rel="noopener noreferrer">Try prune.win</a>
+          </p>
+        </header>
+
+        <section class="section" aria-labelledby="timeline-heading">
+          <h2 class="section__title" id="timeline-heading">timeline</h2>
+          <ol class="timeline" id="log-timeline"></ol>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
