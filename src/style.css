@@ -181,9 +181,33 @@ portfolio-card { display: flex; flex-direction: column; height: 100%; }
 .timeline__title { margin: 0; color: var(--text-primary); font-size: 18px; font-weight: 700; line-height: 24px; }
 .timeline__points { display: grid; gap: var(--space-1); margin: 0; padding-left: 18px; font-size: 14px; line-height: 20px; }
 
+.stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--layout-gap); margin: 0; padding: 0; list-style: none; }
+.stat { display: grid; gap: var(--space-1); align-content: start; }
+.stat__value { margin: 0; color: var(--text-primary); font-size: 28px; font-weight: 700; line-height: 32px; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.stat__label { margin: 0; color: var(--text-body); font-size: 14px; line-height: 20px; }
+
+.funnel { display: grid; gap: var(--space-2); }
+.funnel__title { margin: 0; color: var(--text-muted); font-size: 14px; line-height: 20px; }
+.funnel__list { display: grid; gap: var(--space-1); margin: 0; padding: 0; list-style: none; font-size: 14px; line-height: 20px; }
+.funnel__row { display: grid; grid-template-columns: 128px minmax(0, 1fr) 44px 44px; gap: var(--space-2); align-items: center; }
+.funnel__label { color: var(--text-primary); }
+.funnel__track { display: block; height: 8px; }
+.funnel__bar { display: block; width: var(--w); min-width: 3px; height: 100%; background: var(--text-primary); border-radius: 0 2px 2px 0; }
+.funnel__value { color: var(--text-primary); text-align: right; font-variant-numeric: tabular-nums; }
+.funnel__share { color: var(--text-muted); text-align: right; font-variant-numeric: tabular-nums; }
+
+.timeline__results { display: grid; gap: var(--space-1); margin-top: var(--space-1); padding-left: var(--space-3); border-left: 2px solid var(--text-primary); font-size: 14px; line-height: 20px; color: var(--text-primary); }
+.timeline__results p { margin: 0; }
+.timeline__results .timeline__results-label { color: var(--text-muted); font-size: 12px; line-height: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+
+.log-note { margin: 0; color: var(--text-primary); }
+.log-method { margin: 0; color: var(--text-muted); font-size: 14px; line-height: 20px; }
+
 .card-extra { display: inline-block; margin-top: var(--space-2); font-size: 14px; line-height: 20px; font-weight: 700; }
 
 @media (max-width: 520px) {
+  .stats { grid-template-columns: 1fr; }
+  .funnel__row { grid-template-columns: 104px minmax(0, 1fr) 36px 40px; }
   .timeline__item { grid-template-columns: 1fr; gap: var(--space-1); }
   .log-header__title { font-size: 32px; line-height: 40px; }
 }
